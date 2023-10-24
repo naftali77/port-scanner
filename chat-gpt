@@ -1,0 +1,13 @@
+# Replace this with your Base64 encoded string
+$base64String = "YourBase64EncodedStringHere"
+
+# Convert the Base64 string to a byte array
+$fileContent = [System.Convert]::FromBase64String($base64String)
+
+# Specify the path where you want to save the decoded file
+$filePath = "C:\path\to\output\file.txt"
+
+# Write the byte array to the file
+[System.IO.File]::WriteAllBytes($filePath, $fileContent)
+
+Write-Host "Decoded file saved to $filePath"
